@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<extentreports>
+    <configuration>
+
+        <theme>dark</theme>
+
+        <encoding>UTF-8</encoding>
+
+        <protocol>https</protocol>
+
+        <documentTitle>MarketBilling</documentTitle>
+
+        <reportName>ExtentReport</reportName>
+
+        <reportHeadline></reportHeadline>
+
+        <dateFormat>yyyy-MM-dd</dateFormat>
+
+
+        <timeFormat>HH:mm:ss</timeFormat>
+
+        <scripts>
+            <![CDATA[
+        $(document).ready(function() {
+
+        });
+      ]]>
+        </scripts>
+
+        <styles>
+            <![CDATA[
+
+      ]]>
+        </styles>
+    </configuration>
+</extentreports>

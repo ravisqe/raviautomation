@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+	<test thread-count="1" parallel="classes" name="Test">
+
+		<classes>
+
+			<class name="test.ElectPayment" />
+			<class name="test.WorkFlowTest" />
+			<class name="test.EditUserTest" />
+			<class name="test.ElectPayment" />
+			<class name="test.ChangPasswordTest" />
+
+		</classes>
+	</test> <!-- Test -->
+</suite> <!-- Suite -->
