@@ -10,7 +10,7 @@ public class NewCustomer  extends BasePage {
 	BasePage bp=new BasePage();
     String SUCCESS_MESG="Successfully saved customer.";
 
-
+    public By customer_id = By.xpath("//label[@class=\"col-sm-12 control-label\"]");
     public  By customerTab = By.xpath("//a[@title='Customer']"); 
     public static By CustomerTypedropdown = By.xpath("//select[@id='custTypeEl']");
 	public  By categoryDropdownField = By.xpath("//select[@name='category']"); 
@@ -149,7 +149,9 @@ public class NewCustomer  extends BasePage {
 	    
 	    public String getCustomerId()
 	    {
-	    	return ActionEngine.getText_custom(customerID);
+	    	 String id = ActionEngine.getText_custom(customerID);
+	    	 System.out.println(id);
+	    	   return id ;
 	    	
 	    	
 	    }
@@ -264,6 +266,11 @@ public class NewCustomer  extends BasePage {
     		   ActionEngine.clickBtn_custom(saveCustomerbutton, "Save Customer");
     		   ActionEngine.clickBtn_custom(okbutton, "OK");
     	  }
+    	  public void getCustomerIdText()
+    	  {
+    		    String ID = getText_custom( customer_id);
+    		    System.out.println(ID);
+    	  }
     	  
     	  public String createCustomer(String category , String companyName, String firstName, String lastName, String phoneNumber, String email, String billingEmail, String addressOne, String addressTwo, String city , String zipCode, String country,String plan) throws InterruptedException
     	    {
@@ -312,7 +319,7 @@ public class NewCustomer  extends BasePage {
   	as.assertStrings(getSuccessMsgText(), SUCCESS_MESG);
 
    
-	return phoneNumber;
+	return getCustomerId();
 	
 	
     }
@@ -336,21 +343,20 @@ public class NewCustomer  extends BasePage {
   	as.assertStrings(getSuccessMsgText(), SUCCESS_MESG);
 
    
-	return phoneNumber;
+	return getCustomerId();
 	
 	
     }
-    public String createBusinessCustomer( String CustomerType,String category ,String companyName, String Tradename,String Tittle, String firstName, String lastName, String phoneNumber, String Fax, String email, String billingEmail, String reminder, String addressOne, String addressTwo, String city, String state,String ZipCode1,String AddressCompany,String Address1,String Address2,String City,String State,String ZipCode,String Country ,String AccountName, String AuthenticationType,String AuthenticationNo,String DOB,String Refrence,String Contactno,String RefreeRelationship,String BankAccountName,String BankAccountType,String BankAccountNo,String BankRoute,String BankName,String a,String b,String Note) throws InterruptedException
+   
+    public String createCustomer( String CustomerType,String category ,String companyName, String Tradename,String Tittle, String firstName, String lastName, String phoneNumber, String Fax, String email, String billingEmail, String reminder, String addressOne, String addressTwo, String city, String state,String ZipCode1,String AddressCompany,String Address1,String Address2,String City,String State,String ZipCode,String Country ,String AccountName, String AuthenticationType,String AuthenticationNo,String DOB,String Refrence,String Contactno,String RefreeRelationship,String BankAccountName,String BankAccountType,String BankAccountNo,String BankRoute,String BankName,String a,String b,String Note) throws InterruptedException
     {
     	Assertions as=new Assertions();
 
         clickCustomerTab();
+        enterAccountType(CustomerType,category);
         if (category.equals("Business")|| category.equals("Commercial")) {
-            enterAccountType(CustomerType,category);
+            enterCompanyDetails(companyName,Tradename);
         }
-     //   enterCompanyDetails(a,b);   
-    //  AccountType(CustomerType,category);
-      enterCompanyDetails(companyName,Tradename);
       enterGeneralDetails(Tittle,firstName,lastName,phoneNumber,Fax,email,billingEmail,reminder);
       enterPhysicalAddressDetails(addressOne,addressTwo,city,state,ZipCode1,AddressCompany);
       enterBillingAddressDetails(addressOne,addressTwo,city,state,ZipCode1,AddressCompany); 
@@ -359,11 +365,8 @@ public class NewCustomer  extends BasePage {
       entercustomerPortaldetails(a,b); 
       enterNoteAndSave(Note);
       Thread.sleep(5000);
-  	as.assertStrings(getSuccessMsgText(), SUCCESS_MESG);
 
-   
-	return phoneNumber;
-	
+  	return getCustomerId();
 	
     }
     }

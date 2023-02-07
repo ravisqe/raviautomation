@@ -10,6 +10,8 @@ import org.automation.utilities.PropertiesUtil;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
+import com.mongodb.assertions.Assertions;
+
 public class CreateCustomer extends BaseTest {
 	
 		CustomerPage cp = new CustomerPage();
@@ -34,16 +36,17 @@ public class CreateCustomer extends BaseTest {
 
 		@Test(priority = 1, description = "Create Commercial Customer")
 		public void createACustomer() throws InterruptedException {
-			NC.createCommercialCustomer("Tenant","Commercial", "SSLabs","Trade","Labs", "Dino", "Anotonello", "9988907865" ,"123456", "test12@gmail.com", "t12@gmail.com", "11","38 Decca Road", "35 Decca Road", "Goldsborough","sdfg","sdsdvc","sdfsvd","dfghggf","dfgf","dfghgffd","fhfg", "sdfg", "sdff","Name","Passport No","sdfghgg","03/03/1999","Reference","53456","xcv","dsfg","Savings","sfdg","mngf","jhgf","a","12345678","Note");
-		  }
+			String CustomerId = 	NC.createCustomer("Tenant","Commercial", "SSLabs","Trade","Labs", "Dino", "Anotonello", "9988907865" ,"123456", "test12@gmail.com", "t12@gmail.com", "11","38 Decca Road", "35 Decca Road", "Goldsborough","sdfg","sdsdvc","sdfsvd","dfghggf","dfgf","dfghgffd","fhfg", "sdfg", "sdff","Name","Passport No","sdfghgg","03/03/1999","Reference","53456","xcv","dsfg","Savings","sfdg","mngf","jhgf","a","12345678","Note");
+ 
+		}
 		@Test(priority = 2, description = "Create Residential Customer")
 		public void createAresidentialCustomer() throws InterruptedException {
-		NC.createResidentialCustomer("Tenant","Residential", "Labs", "Dino", "Anotonello", "9988907865" ,"123456", "test12@gmail.com", "t12@gmail.com", "11","38 Decca Road", "35 Decca Road", "Goldsborough","sdfg","sdsdvc","sdfsvd","dfghggf","dfgf","dfghgffd","fhfg", "sdfg", "sdff","Name","Passport No","sdfghgg","03/03/1999","Reference","53456","xcv","dsfg","Savings","sfdg","mngf","jhgf","a","12345678","Note");
+			String CustomerId = NC.createResidentialCustomer("Tenant","Residential", "Labs", "Dino", "Anotonello", "9988907865" ,"123456", "test12@gmail.com", "t12@gmail.com", "11","38 Decca Road", "35 Decca Road", "Goldsborough","sdfg","sdsdvc","sdfsvd","dfghggf","dfgf","dfghgffd","fhfg", "sdfg", "sdff","Name","Passport No","sdfghgg","03/03/1999","Reference","53456","xcv","dsfg","Savings","sfdg","mngf","jhgf","a","12345678","Note");
 	  }
 
 		@Test(priority = 3, description = "Create Business Customer")
 		public void createABusinessCustomer() throws InterruptedException {
-			NC.createBusinessCustomer("Tenant","Business", "SSLabs","Trade","Labs", "Dino", "Anotonello", "9988907865" ,"123456", "test12@gmail.com", "t12@gmail.com", "11","38 Decca Road", "35 Decca Road", "Goldsborough","sdfg","sdsdvc","sdfsvd","dfghggf","dfgf","dfghgffd","fhfg", "sdfg", "sdff","Name","Passport No","sdfghgg","03/03/1999","Reference","53456","xcv","dsfg","Savings","sfdg","mngf","jhgf","a","12345678","Note");
+			 String CustomerId = NC.createCustomer("Tenant","Business", "SSLabs","Trade","Labs", "Dino", "Anotonello", "9988907865" ,"123456", "test12@gmail.com", "t12@gmail.com", "11","38 Decca Road", "35 Decca Road", "Goldsborough","sdfg","sdsdvc","sdfsvd","dfghggf","dfgf","dfghgffd","fhfg", "sdfg", "sdff","Name","Passport No","sdfghgg","03/03/1999","Reference","53456","xcv","dsfg","Savings","sfdg","mngf","jhgf","a","12345678","Note");
 		  }
 		
         }
