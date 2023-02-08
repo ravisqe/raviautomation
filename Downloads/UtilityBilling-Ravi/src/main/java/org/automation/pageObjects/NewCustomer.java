@@ -297,56 +297,7 @@ public class NewCustomer  extends BasePage {
     	    	return getCustomerId();
     		}
 
-    public String createCommercialCustomer( String CustomerType,String category ,String companyName, String Tradename,String Tittle, String firstName, String lastName, String phoneNumber, String Fax, String email, String billingEmail, String reminder, String addressOne, String addressTwo, String city, String state,String ZipCode1,String AddressCompany,String Address1,String Address2,String City,String State,String ZipCode,String Country ,String AccountName, String AuthenticationType,String AuthenticationNo,String DOB,String Refrence,String Contactno,String RefreeRelationship,String BankAccountName,String BankAccountType,String BankAccountNo,String BankRoute,String BankName,String a,String b,String Note) throws InterruptedException
-    {
-    	Assertions as=new Assertions();
-
-        clickCustomerTab();
-        if (category.equals("Business")|| category.equals("Commercial")) {
-            enterAccountType(CustomerType,category);
-        }
-     //   enterCompanyDetails(a,b);   
-    //  AccountType(CustomerType,category);
-      enterCompanyDetails(companyName,Tradename);
-      enterGeneralDetails(Tittle,firstName,lastName,phoneNumber,Fax,email,billingEmail,reminder);
-      enterPhysicalAddressDetails(addressOne,addressTwo,city,state,ZipCode1,AddressCompany);
-      enterBillingAddressDetails(addressOne,addressTwo,city,state,ZipCode1,AddressCompany); 
-      enterAuthenticationDetails(AccountName,AuthenticationType, AuthenticationNo, DOB, Refrence, Contactno, RefreeRelationship);
-      enterBankingDetails(BankAccountName, BankAccountType, BankAccountNo, BankRoute, BankName);
-      entercustomerPortaldetails(a,b); 
-      enterNoteAndSave(Note);
-      Thread.sleep(5000);
-  	as.assertStrings(getSuccessMsgText(), SUCCESS_MESG);
-
    
-	return getCustomerId();
-	
-	
-    }
-    public String createResidentialCustomer( String CustomerType,String category ,String Tittle, String firstName, String lastName, String phoneNumber, String Fax, String email, String billingEmail, String reminder, String addressOne, String addressTwo, String city, String state,String ZipCode1,String AddressCompany,String Address1,String Address2,String City,String State,String ZipCode,String Country ,String AccountName, String AuthenticationType,String AuthenticationNo,String DOB,String Refrence,String Contactno,String RefreeRelationship,String BankAccountName,String BankAccountType,String BankAccountNo,String BankRoute,String BankName,String a,String b,String Note) throws InterruptedException
-    {
-    	Assertions as=new Assertions();
-
-        clickCustomerTab();
-        if (category.equals("Business")|| category.equals("Commercial")||category.equals("Residential")) {
-            enterAccountType(CustomerType,category);
-        }
-     //   enterCompanyDetails(a,b);   
-    //  AccountType(CustomerType,category);
-      enterGeneralDetails(Tittle,firstName,lastName,phoneNumber,Fax,email,billingEmail,reminder);
-      enterPhysicalAddressDetails(addressOne,addressTwo,city,state,ZipCode1,AddressCompany);
-      enterBillingAddressDetails(addressOne,addressTwo,city,state,ZipCode1,AddressCompany); 
-      enterAuthenticationDetails(AccountName,AuthenticationType, AuthenticationNo, DOB, Refrence, Contactno, RefreeRelationship);
-      enterBankingDetails(BankAccountName, BankAccountType, BankAccountNo, BankRoute, BankName);
-      entercustomerPortaldetails(a,b); 
-      enterNoteAndSave(Note);
-  	as.assertStrings(getSuccessMsgText(), SUCCESS_MESG);
-
-   
-	return getCustomerId();
-	
-	
-    }
    
     public String createCustomer( String CustomerType,String category ,String companyName, String Tradename,String Tittle, String firstName, String lastName, String phoneNumber, String Fax, String email, String billingEmail, String reminder, String addressOne, String addressTwo, String city, String state,String ZipCode1,String AddressCompany,String Address1,String Address2,String City,String State,String ZipCode,String Country ,String AccountName, String AuthenticationType,String AuthenticationNo,String DOB,String Refrence,String Contactno,String RefreeRelationship,String BankAccountName,String BankAccountType,String BankAccountNo,String BankRoute,String BankName,String a,String b,String Note) throws InterruptedException
     {
