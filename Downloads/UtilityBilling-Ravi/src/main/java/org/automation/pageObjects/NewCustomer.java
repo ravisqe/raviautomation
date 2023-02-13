@@ -315,6 +315,7 @@ public class NewCustomer  extends BasePage {
       enterBankingDetails(BankAccountName, BankAccountType, BankAccountNo, BankRoute, BankName);
       entercustomerPortaldetails(a,b); 
       enterNoteAndSave(Note);
+      //ne wline added
       Thread.sleep(5000);
 
   	return getCustomerId();
